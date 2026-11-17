@@ -1,41 +1,47 @@
-export function renderNavbar({ activeWorkspace, actoveWindowTitle}){
-    return 
-    `
-    <header class="sticky top-0 z-40 h-[34px] w-full bg-[#0E0E10]/95 backdrop-blur border-b border-[#242429] px-3 flex items-center justify-between font-mono-tech text-[11px]">
-      <div class="flex items-center gap-1">
+export function renderNavbar(nav) {
+  return `
+    <header class="fixed top-0 inset-x-0 z-40 h-16 bg-black/90 backdrop-blur-md border-b border-[#18181D]">
+      <div class="max-w-5xl mx-auto h-full px-6 flex items-center justify-between">
         <button
-          data-workspace="home"
-          class="px-2 py-0.5 border transition-colors cursor-pointer ${
-            activeWorkspace === "home"
-              ? "bg-[#FAFAFA] text-[#050506] border-[#FAFAFA] font-semibold"
-              : "bg-transparent text-[#A1A1AA] border-transparent hover:border-[#242429] hover:text-[#FAFAFA]"
-          }"
+          type="button"
+          translate="no"
+          data-back-home
+          class="font-mono-code text-sm font-medium text-[#FAFAFA] tracking-tight hover:opacity-80 transition-opacity cursor-pointer"
         >
-          [1: workspace]
+          gustavo.dev
         </button>
+
+        <!-- Navegação Desktop -->
+        <nav class="hidden md:flex items-center gap-7 font-mono-code text-xs text-[#A1A1AA]">
+          <a href="#sobre" data-nav-section="#sobre" class="hover:text-[#FAFAFA] transition-colors">${nav.about}</a>
+          <a href="#habilidades" data-nav-section="#habilidades" class="hover:text-[#FAFAFA] transition-colors">${nav.skills}</a>
+          <a href="#projetos" data-nav-section="#projetos" class="hover:text-[#FAFAFA] transition-colors">${nav.projects}</a>
+          <a href="#formacao" data-nav-section="#formacao" class="hover:text-[#FAFAFA] transition-colors">${nav.education}</a>
+          <a href="#contato" data-nav-section="#contato" class="hover:text-[#FAFAFA] transition-colors">${nav.contact}</a>
+        </nav>
+
+        <!-- Botão Menu Mobile -->
         <button
-          data-workspace="case-study"
-          class="px-2 py-0.5 border transition-colors cursor-pointer ${
-            activeWorkspace === "case-study"
-              ? "bg-[#FAFAFA] text-[#050506] border-[#FAFAFA] font-semibold"
-              : "bg-transparent text-[#A1A1AA] border-transparent hover:border-[#242429] hover:text-[#FAFAFA]"
-          }"
+          type="button"
+          id="mobile-menu-toggle"
+          aria-label="Menu"
+          class="md:hidden px-2.5 py-1.5 border border-[#18181D] bg-[#08080A] font-mono-code text-xs text-[#FAFAFA]"
         >
-          [2: case-study]
+          MENU
         </button>
       </div>
 
-      <div class="hidden md:flex items-center gap-2 text-[#71717A]">
-        <span class="inline-block w-1.5 h-1.5 bg-[#FAFAFA]"></span>
-        <span>hyprctl activewindow →</span>
-        <span id="waybar-active-window" class="text-[#D4D4D8]">${activeWindowTitle}</span>
-      </div>
-
-      <div class="flex items-center gap-3 text-[#A1A1AA]">
-        <span class="hidden sm:inline text-[#71717A]">ETH0: UP</span>
-        <span id="waybar-clock" class="text-[#FAFAFA]">00:00:00</span>
+      <!-- Drawer Mobile -->
+      <div
+        id="mobile-menu-drawer"
+        class="hidden md:hidden bg-black border-b border-[#18181D] px-6 py-5 space-y-3 font-mono-code text-xs text-[#A1A1AA]"
+      >
+        <a href="#sobre" data-nav-section="#sobre" class="block py-1.5 hover:text-[#FAFAFA]">${nav.about}</a>
+        <a href="#habilidades" data-nav-section="#habilidades" class="block py-1.5 hover:text-[#FAFAFA]">${nav.skills}</a>
+        <a href="#projetos" data-nav-section="#projetos" class="block py-1.5 hover:text-[#FAFAFA]">${nav.projects}</a>
+        <a href="#formacao" data-nav-section="#formacao" class="block py-1.5 hover:text-[#FAFAFA]">${nav.education}</a>
+        <a href="#contato" data-nav-section="#contato" class="block py-1.5 hover:text-[#FAFAFA]">${nav.contact}</a>
       </div>
     </header>
   `;
-        }
-    
+}

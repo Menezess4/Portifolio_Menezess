@@ -150,7 +150,6 @@ export function renderCaseStudyPage({ project, allProjects, labels }){
 
     <footer class="border-t border-[#18181D] py-8 px-6">
       <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 font-mono-code text-xs text-[#52525B]">
-        <span>© 2026 Gustavo Menezes</span>
         <button type="button" data-back-home class="hover:text-[#FAFAFA] transition-colors cursor-pointer">
           ${labels.backHome}
         </button>

@@ -13,7 +13,7 @@ export const portifolioConteudo = {
         contato: "05. Contato",
     },
     hero: {
-        status: "Disponivel para estagios e oportunidades",
+        status: "Disponível para estágios e oportunidades",
         nome: "Gustavo Menezes",
         role: "Redes de Computadores | Desenvolvedor Web Full Stack",
         summary: "Sou um estudante de Redes de Computadores e Desenvolvedor Web Full Stack, apaixonado por tecnologia e inovação. Com habilidades em desenvolvimento web, estou sempre em busca de novos desafios e oportunidades para aplicar meus conhecimentos e contribuir para projetos significativos.",
@@ -37,15 +37,42 @@ export const portifolioConteudo = {
     skills: { 
         index: "02",
         title: "Habilidades",
-        grupos: [{
-            category = {
-                label: "Front-End",
-                skills: ["HTML", "CSS", "JavaScript", "TailwindCSS", "Figma"]
+        grupos: [
+            {
+            category:"Front-End", 
+            skills: ["HTML", "CSS", "JavaScript", "TailwindCSS", "Figma", "Android Studio"]
+            },
+            {
+            category:"Back-End",    
+            skills: ["Python", "Node.js", "MySQL", "SQLite", "Flask"]
+            },
+            {
+            category:"Redes e Infraestrutura",
+            skills: ["TCP/IP", "HTTP/HTTPS", "Modelo OSI", "Cisco Packet Tracer", "Sub-Redes e Mascara de Rede"]
             }
-            category = {
-                label: "Back-End",
-                skills: ["Python", "Node.js", "MySQL", "SQLite", "Flask"]
+        ]
+    },
+    projects: {
+        index: "03",
+        title: "Projetos",
+        subtitle: "Alguns dos meus projetos recentes, Clique para ver mais detalhes.",
+        filters: [
+            {label: "Todos", id:"all"},
+            {label: "web", id:"web"},
+            {label: "redes", id:"redes"}
+        ],
+        caseStudyCta: "Ver Estudo de Caso ↗",
+        items: [
+            {
+                id: "stockup",
+                index: "01",
+                title: "StockUp — Sistema de Controle de Estoque",
+                category: "web",
+                categoryLabel: "Web",
+                year: "2026",
+
+
             }
-    }]
+        ],
     }
 }
