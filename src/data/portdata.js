@@ -5,3 +5,10 @@ export const perfil = {
     github: '',
     linkedin: ''
 };
+
+export const projetos = { 
+    nome: "",
+    sobre: ""
+    
+    
+}
