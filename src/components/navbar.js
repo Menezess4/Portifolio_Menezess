@@ -4,11 +4,9 @@ export function renderNavbar(nav) {
       <div class="max-w-5xl mx-auto h-full px-6 flex items-center justify-between">
         <button
           type="button"
-          translate="no"
           data-back-home
           class="font-mono-code text-sm font-medium text-[#FAFAFA] tracking-tight hover:opacity-80 transition-opacity cursor-pointer"
         >
-          gustavo.dev
         </button>
 
         <!-- Navegação Desktop -->
